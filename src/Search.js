@@ -29,8 +29,8 @@ function Search() {
             <h2>
                 Number of guests <PeopleIcon />
             </h2>
-            <input min={0} defaultValue={2} type="number" />
-            <Button onClick={() => history.push('/search')}>Search Airbnb</Button>
+            <input min={0} defaultValue={2} className="searchbar" type="number" />
+            <Button onClick={() => history.push('/search')}>Search</Button>
         </div>
     )
 }
