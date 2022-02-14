@@ -395,9 +395,9 @@ function MyHome(){
                 cancelOnInteraction={false} // should stop playing on user interaction
                 interval={6000}
             >
-                <div data-src="/path/to/image-0.png" />
-                <div data-src="/path/to/image-1.png" />
-                <div data-src="/path/to/image-2.jpg" />
+                <div data-src="https://th.bing.com/th/id/R.b1f3b542205798840c34770fce9e4044?rik=CIi3AsQiY0mvRQ&pid=ImgRaw&r=0" />
+                <div data-src="https://th.bing.com/th/id/OIF.F61vKtpBaURS0iIcPoGHnA?pid=ImgDet&rs=1" />
+                <div data-src="https://th.bing.com/th/id/OIP.ziJPiBCYNJaOEd9QO8g-gQHaEx?pid=ImgDet&w=930&h=600&rs=1" />
             </AutoplaySlider>
         </Container>
         <MouseParticles g={1} radius="10" color="random" cull="col,image-wrapper"/>
