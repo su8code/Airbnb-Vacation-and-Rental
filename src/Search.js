@@ -27,7 +27,7 @@ function Search() {
         <div className='search'>
             <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
             <h2>
-                Number of guests <PeopleIcon />
+                number of guests <PeopleIcon />
             </h2>
             <input min={0} defaultValue={2} className="searchbar" type="number" />
             <Button onClick={() => history.push('/search')}>Search</Button>

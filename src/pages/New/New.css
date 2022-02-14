@@ -36,6 +36,11 @@ label#thumbnail.has-thumbnail img{
     flex-direction: column;
     align-items: center;
   }
+
+  .background{
+         padding-top: 45px;
+         padding-bottom: 45px;
+  }
   
   .contentNew{
     width:100%;

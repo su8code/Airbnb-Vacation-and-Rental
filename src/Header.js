@@ -1,5 +1,5 @@
 import React from 'react'
-import './Header.css'
+import "./Header.css"
 import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from "@material-ui/icons/Language";
 import { Avatar } from "@material-ui/core";
@@ -10,9 +10,9 @@ import NotifIcon  from "@material-ui/icons/NotificationsActive";
 import SettingIcon  from "@material-ui/icons/Settings";
 import CogIcon  from "@material-ui/icons/Reply";
 import HelpIcon  from "@material-ui/icons/Help";
-import ChevronIcon  from "@material-ui/icons/ChevronRight";
-import ArrowIcon from "@material-ui/icons/ArrowBack";
-import BoltIcon from "@material-ui/icons/OfflineBolt";
+import airbnb from "./assets/airbnb.png"
+
+import Menubutton from "@material-ui/icons/Menu"
 
 import { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
@@ -21,30 +21,44 @@ import { useHistory } from "react-router-dom";
 function Header() {
   const history = useHistory();
   const [showSearch, setShowSearch] = useState(false);
+  const [navbar , setNavbar] = useState("true");
+
+  const changeBackground = ()=> {
+      if(window.scrollY  < 30) {
+          setNavbar(true)
+      } else{
+          setNavbar(false)
+      }    
+  }
+  window.addEventListener('scroll' , changeBackground);
 
    return (
-        <div className='header'>
+        <div className={ navbar? 'header active' : 'header'}>
             <Link to='/'>
                 <img
                     className="header__icon"
-                    src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png"
+                    src={airbnb}
                     alt=""
                 />
             </Link>
            
             <div className='header__center'>
-                <input onClick={() => setShowSearch(!showSearch)} type="text" classNamr="searchtxt" placeholder='Where are you Going?'/>
-                <SearchIcon onClick={() => history.push('/search')} />
+                <input onClick={() => setShowSearch(!showSearch)} type="text" classNamr="searchtxt" placeholder='Start Your Search'/>
+                <SearchIcon onClick={() => history.push('/search')} className="searchIcon"/>
             </div>
             
             <div className='header__right'>
-              <p onClick={() => history.push('/new')}  className="becomeAHost">Become a host</p>
-                   <LanguageIcon />
-                    <Navbar>
-                      <NavItem icon={<Avatar />}>
-                            <DropdownMenu></DropdownMenu>
-                            </NavItem>
-                    </Navbar>
+              <p onClick={() => history.push('/new')}  className="becomeAHost">Become a Host</p>
+                   <LanguageIcon className="languageIcon"/>
+
+                   <div className="MenuButtonBox">
+                        <Menubutton />
+                        <Navbar>
+                          <NavItem icon={<Avatar />}>
+                                <DropdownMenu></DropdownMenu>
+                                </NavItem>
+                        </Navbar>
+                    </div>
             </div>
             
         </div>
@@ -93,13 +107,9 @@ function DropdownMenu() {
         <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
           <span className="icon-button">{props.leftIcon}</span>
           {props.children}
-          <span className="icon-right">{props.rightIcon}</span>
         </a>
       );
     }
-
-    
-  
     return(
       <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
   
@@ -111,69 +121,26 @@ function DropdownMenu() {
           onEnter={calcHeight}>
           <div className="menu">
             <DropdownItem            
-            leftIcon="👤"
+            leftIcon="👤" 
             >Sign In</DropdownItem>
             <DropdownItem
              leftIcon={<NotifIcon />}
             >Sign Up</DropdownItem>
             <DropdownItem
               leftIcon="🦧"
-              rightIcon={<ChevronIcon />}
-              goToMenu="animals">
-              Trips
+              >
+              Our Services
             </DropdownItem>
-            <DropdownItem leftIcon="❤️">My WishList(6)</DropdownItem>
-            <DropdownItem leftIcon="🗣">Share Your Experience</DropdownItem>
-            <DropdownItem leftIcon="📝">Manage Listings</DropdownItem>
             <DropdownItem
               leftIcon={<SettingIcon />}
-              rightIcon={<ChevronIcon />}
-              goToMenu="settings">
-              Settings
+              >
+              Contact Us
             </DropdownItem>
             <DropdownItem 
             leftIcon={<HelpIcon />}
-            >Help</DropdownItem>
-            <DropdownItem leftIcon={<logoutIcon />} >LogOut</DropdownItem>
+            >About Us</DropdownItem>
           </div>
         </CSSTransition>
-  
-        <CSSTransition
-          in={activeMenu === 'settings'}
-          timeout={500}
-          classNames="menu-secondary"
-          unmountOnExit
-          onEnter={calcHeight}>
-          <div className="menu">
-            <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-              <h2>Settings</h2>
-            </DropdownItem>
-            <DropdownItem leftIcon={<BoltIcon />}>Your Profile Information</DropdownItem>
-            <DropdownItem leftIcon={<BoltIcon />}>Privacy and Security</DropdownItem>
-            <DropdownItem leftIcon={<BoltIcon />}>Trip and Travel</DropdownItem>
-            <DropdownItem leftIcon={<BoltIcon />}>Payment Options</DropdownItem>
-          </div>
-        </CSSTransition>
-  
-        <CSSTransition
-          in={activeMenu === 'animals'}
-          timeout={500}
-          classNames="menu-secondary"
-          unmountOnExit
-          onEnter={calcHeight}>
-          <div className="menu">
-            <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-              <h2>Trips</h2>
-            </DropdownItem>
-            <DropdownItem leftIcon="🔍">Search Trips</DropdownItem>
-            <DropdownItem leftIcon="🦘">Find Trips Around You</DropdownItem>
-            <DropdownItem leftIcon="🇪🇹">Trips in Ethiopia</DropdownItem>
-            <DropdownItem leftIcon="🏖">Trips to Dubai</DropdownItem>
-            <DropdownItem leftIcon="✈️">International Trips</DropdownItem>
-            <DropdownItem leftIcon="📌">Saved Trips</DropdownItem>
-          </div>
-        </CSSTransition>
-        
       </div>
     );
   }

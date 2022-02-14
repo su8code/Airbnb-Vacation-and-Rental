@@ -58,7 +58,7 @@ const New = ({ history }) => {
             type="text"
             id="title"
             value={title}
-            placeholder="Name"
+            placeholder="Name of the new property"
             onChange={e => setTitle(e.target.value)}
           />
 

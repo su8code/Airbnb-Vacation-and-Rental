@@ -4,16 +4,14 @@ import "./Dashboard.css";
 import api from "../../services/api";
 import socketio from "socket.io-client";
 import Slider from "react-slick";
-import Experience from "../../components/Experience/Experience";
-import Video from "../../components/Video/Video";
 import { Container, Modal, Button} from "react-bootstrap";
-import Header from "../../components/Header/Header";
 
 const Dashboard = () => {
   const [spots, setSpots] = useState([]);
   const [citySpots, setcitySpots] = useState([]);
   const [requests, setRequests] = useState([]);
 
+  // eslint-disable-next-line
   const user_id = localStorage.getItem("user");
 
 
@@ -116,13 +114,14 @@ const Dashboard = () => {
   };
 
  */
+
+  
   return (
     <div className="containerDashboard">
 
 
-      <Header />
       <h2 className="ferias">Ooops... This Section is Under Construction</h2>
-      <Video />
+     
       
     </div>
   );};
@@ -228,4 +227,6 @@ const Dashboard = () => {
     </div>
   );
 };
+
+
   */
