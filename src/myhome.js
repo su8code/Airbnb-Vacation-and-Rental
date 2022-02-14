@@ -19,8 +19,10 @@ import MouseParticles from 'react-mouse-particles'
 import Slider from 'react-slick'
 
 import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
 
+const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const useStyles = makeStyles((theme)=> ({
     mainContainer: {
@@ -388,11 +390,15 @@ function MyHome(){
            <Slider>
                <p>kkkkkk</p>
            </Slider>
-            <AwesomeSlider animation="cubeAnimation">
-                <div data-src={BgPicture} />
-                <div data-src={BgPicture} />
-                <div data-src={BgPicture} />
-            </AwesomeSlider>
+           <AutoplaySlider
+                play={true}
+                cancelOnInteraction={false} // should stop playing on user interaction
+                interval={6000}
+            >
+                <div data-src="/path/to/image-0.png" />
+                <div data-src="/path/to/image-1.png" />
+                <div data-src="/path/to/image-2.jpg" />
+            </AutoplaySlider>
         </Container>
         <MouseParticles g={1} radius="10" color="random" cull="col,image-wrapper"/>
         </>
