@@ -4,31 +4,31 @@ import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from "@material-ui/icons/Language";
 import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
-
-import logoutIcon  from "@material-ui/icons/SupervisedUserCircleOutlined";
-import NotifIcon  from "@material-ui/icons/NotificationsActive";
-import SettingIcon  from "@material-ui/icons/Settings";
-import CogIcon  from "@material-ui/icons/Reply";
-import HelpIcon  from "@material-ui/icons/Help";
 import airbnb from "./assets/airbnb.png"
-
-import Menubutton from "@material-ui/icons/Menu"
-
-import { useState, useEffect, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import { useState} from 'react';
 import { useHistory } from "react-router-dom";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip'
+import DateRangeIcon from '@material-ui/icons/DateRange'
 
+import Search from './Search'
 function Header() {
   const history = useHistory();
   const [showSearch, setShowSearch] = useState(false);
-  const [navbar , setNavbar] = useState("true");
-
+  const [navbar , setNavbar] = useState("true");  
+  const [slidingBarValue , setSliderValue] = useState(15);
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false)
+    
   const changeBackground = ()=> {
       if(window.scrollY  < 30) {
           setNavbar(true)
       } else{
           setNavbar(false)
-      }    
+      } 
+      
+      setSliderValue(window.scrollY)
   }
   window.addEventListener('scroll' , changeBackground);
 
@@ -45,103 +45,78 @@ function Header() {
             <div className='header__center'>
                 <input onClick={() => setShowSearch(!showSearch)} type="text" classNamr="searchtxt" placeholder='Start Your Search'/>
                 <SearchIcon onClick={() => history.push('/search')} className="searchIcon"/>
+
+
+                <div className='headerInputContainer'>
+                    {isDatePickerOpen && (
+                        <div className='datePickerConatiner'>
+                            <Search setIsDatePickerOpen={setIsDatePickerOpen} />
+                        </div>
+                    )}
+                </div>
+                <div className='headerDatePickerContainer'>
+                    <Tooltip
+                        title={
+                            <p className='tooltip'>
+                                {isDatePickerOpen
+                                    ? 'Hide Dates'
+                                    : 'Search Dates'}
+                            </p>
+                        }
+                        aria-label='select-dates'
+                    >
+                        <DateRangeIcon
+                            className='iconCustom'
+                            onClick={() =>
+                                setIsDatePickerOpen(!isDatePickerOpen)
+                            }
+                        />
+                        
+                    </Tooltip>
+                </div>
+
             </div>
             
             <div className='header__right'>
-              <p onClick={() => history.push('/new')}  className="becomeAHost">Become a Host</p>
-                   <LanguageIcon className="languageIcon"/>
 
-                   <div className="MenuButtonBox">
-                        <Menubutton />
-                        <Navbar>
-                          <NavItem icon={<Avatar />}>
-                                <DropdownMenu></DropdownMenu>
-                                </NavItem>
-                        </Navbar>
-                    </div>
+                <Link to='/services'>
+                    <Button className='btn btnPrimaryOutlined'>
+                        Services
+                    </Button>
+
+                </Link>
+                       <Link to='/aboutus'>
+                    <Button className='btn btnPrimaryOutlined'>
+                       About us
+                    </Button>
+                  
+                </Link>
+                <Link to='/contact'>
+                    <Button className='btn btnPrimaryOutlined'>
+                        Contact Us
+                    </Button>
+
+                </Link>
+                
+                <Link to='/new'>
+                    <Button className='btn btnPrimaryOutlined'>
+                        New
+                    </Button>
+
+                </Link>
+                <LanguageIcon />
+                <ExpandMoreIcon />
+                <IconButton>
+                    
+                    <Avatar src="https://bestanimations.com/media/color-full-earth/1772715593earth-spinning-rotating-animation-25.gif" />
+
+                </IconButton>
+
+                
             </div>
             
         </div>
-
     )
 }
 
-function Navbar(props) {
-    return (
-      <nav className="navbar">
-        <ul className="navbar-nav">{props.children}</ul>
-      </nav>
-    );
-}
-function NavItem(props) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
-        {props.icon}
-      </a>
-
-      {open && props.children}
-    </li>
-  );
-}
-
-function DropdownMenu() {
-    const [activeMenu, setActiveMenu] = useState('main');
-    const [menuHeight, setMenuHeight] = useState(null);
-    const dropdownRef = useRef(null);
-  
-    useEffect(() => {
-      setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
-    }, [])
-  
-    function calcHeight(el) {
-      const height = el.offsetHeight;
-      setMenuHeight(height);
-    }
-  
-
-    function DropdownItem(props) {
-      return (
-        <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
-          <span className="icon-button">{props.leftIcon}</span>
-          {props.children}
-        </a>
-      );
-    }
-    return(
-      <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
-  
-        <CSSTransition
-          in={activeMenu === 'main'}
-          timeout={500}
-          classNames="menu-primary"
-          unmountOnExit
-          onEnter={calcHeight}>
-          <div className="menu">
-            <DropdownItem            
-            leftIcon="👤" 
-            >Sign In</DropdownItem>
-            <DropdownItem
-             leftIcon={<NotifIcon />}
-            >Sign Up</DropdownItem>
-            <DropdownItem
-              leftIcon="🦧"
-              >
-              Our Services
-            </DropdownItem>
-            <DropdownItem
-              leftIcon={<SettingIcon />}
-              >
-              Contact Us
-            </DropdownItem>
-            <DropdownItem 
-            leftIcon={<HelpIcon />}
-            >About Us</DropdownItem>
-          </div>
-        </CSSTransition>
-      </div>
-    );
-  }
 export default Header

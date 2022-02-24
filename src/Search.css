@@ -36,14 +36,16 @@
 .search > button {
     position: absolute;
     left: 0;
-    top: 480px;
+    top: 440px;
     text-transform: inherit !important;
-    background-color: #ff7779;
+    background-color: blue;
     color: white;
-    width: 579px;
+    width: 170px;
+    height: 45px;
+    margin-left: 280px;
   }
 
 .search > button:hover {
-    background-color: white;
-    color: #ff7779;
+    background-color:  rgb(10, 10, 177);
+    color: white;
 }

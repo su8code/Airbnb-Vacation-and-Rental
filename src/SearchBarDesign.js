@@ -29,11 +29,11 @@ function SearchBarDesign(){
           <label className="lable1">Location</label>
           <input className="lable2" id="searchInputBox" type='text' placeholder='Where are You Going?' />
       </div>
-      <div className="container-child" onClick={() => setShowSearch(!showSearch)}>
+      <div className="container-child">
           <label className="lable1">Check In</label>
           <label className="lable2">Add Dates</label>
       </div>
-      <div className="container-child" onClick={() => setShowSearch(!showSearch)}>
+      <div className="container-child" >
           <label className="lable1">Check Out</label>
           <label className="lable2">Add Dates</label>
       </div>

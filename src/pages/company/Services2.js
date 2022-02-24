@@ -209,7 +209,7 @@ const Services = () => {
           <Grid item>
             <Typography variant={matches ? "h5" : "h4"} className={classeS.titles}>
               {" "}
-               Beautifull Tent for Couples all over the worls
+               Beautifull Tent for Couples all over the world
             </Typography>
             <Typography variant="subtitle1"className={classeS.titles}>
               pay anywhere using your phone tablet or through your laptop.{matcheXS && <br />} extend Access.

@@ -1,5 +1,5 @@
 import React from 'react'
-import './Footer.css'
+import './footerStyle.css'
 import {SingleLinksColumn} from './GetComponents'
 import {LanguageIcon, Facebook, Telegram, Instagram} from './GetIcons'
 import {Link} from 'react-router-dom'
@@ -74,7 +74,7 @@ const data = [
 
 function Footer() {
     return (
-        <section className='footer MT5'>
+        <section className='footer MT4'>
             <div className='footerContainer'>
                 {data.map(item => {
                     return <SingleLinksColumn key={item.id} {...item} />

@@ -27,10 +27,10 @@ function Search() {
         <div className='search'>
             <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
             <h2>
-                number of guests <PeopleIcon />
+                Number of guests <PeopleIcon />
             </h2>
             <input min={0} defaultValue={2} className="searchbar" type="number" />
-            <Button onClick={() => history.push('/search')}>Search</Button>
+            <Button class="searchBtn" onClick={() => history.push('/search')}>Search</Button>
         </div>
     )
 }

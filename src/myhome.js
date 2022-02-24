@@ -2,7 +2,7 @@ import {React , useState} from 'react';
 import Card from './Card'
 import SearchBarDesign from './SearchBarDesign'
 import { makeStyles } from "@material-ui/core/styles"
-import {Button , Box , Container , Grid} from "@material-ui/core"
+import {Button , Box , Container , Grid , Slider} from "@material-ui/core"
 import Typography from "@material-ui/core/Typography"
 import BgPicture from "./assets/background.jpg"
 
@@ -16,11 +16,18 @@ import TripRight from "./assets/image2.jpeg"
 import {Destinations} from "./DataAsset/DestinationCountries"
 
 import MouseParticles from 'react-mouse-particles'
-import Slider from 'react-slick'
+
 
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
+
+
+
+import PicAfar from "./assets/afar.jpg"
+import PicHarer from "./assets/harer.jpg"
+import Pich from "./assets/hh.jpg"
+import PicEmir from "./assets/emir.jpg"
 
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -63,6 +70,7 @@ const useStyles = makeStyles((theme)=> ({
     padding: "30px",
     marginLeft: "55px"
    },
+
    find: {
     marginTop: "0px",
     display: "flex",
@@ -95,10 +103,8 @@ const useStyles = makeStyles((theme)=> ({
    headerText1: {
        marginTop: "130px",
        fontSize: "35px",
-       color: "blue",
-       [theme.breakpoints.up("sm")]: {
-           color: "red"
-       }
+       color: "black",
+       marginBottom: "20px"
    },
    ExpPicture: {
        width: "400px"
@@ -147,7 +153,7 @@ airbnbShopGiftsRight: {
 },
 airbnbShopGifts: {
     marginTop: "120px",
-    width: "90vw",
+    width: "100vw",
     display: "flex", 
     height: "90vh"
 },
@@ -204,6 +210,18 @@ ExpButton: {
     borderRadius: "10px"
 }, 
 
+textSlider: {
+    display: "flex",
+    flexDirection: "row",
+    paddingTop: "160px",
+    fontSize: "35px",
+    color: "white",
+},
+slidingText: {
+
+    fontSize: "25px",
+    color: "white",
+}
 }));
 
 
@@ -213,6 +231,10 @@ function MyHome(){
     const classes = useStyles();
     const [bgColor , setBgColor] = useState("yellow");
     const [navbar , setNavbar] = useState("false");
+    const [sliderText , setText] = useState("The City of Marvelious Spiritual Heritages")
+    const [bgImage , setBgImage] = useState(`url(${PicHarer})`)
+    const [sliderHeader , setSliderHeader] = useState("Gonder");
+
 
     const homeBannerStyle = {
         display: "flex",
@@ -224,13 +246,21 @@ function MyHome(){
         backgroundColor: "black"
     }
     const appStyle = {
-        background: `${bgColor}`,
+        backgroundImage: bgImage,        
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
         width: "100%",
-        height: "40vh",
+        height: "75vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         spacing: "10px",
+        flexDirection: "column",
+        
+    };
+
+    const btnStyle = {
+        marginLeft: "10px"
     };
 
     const changeBackground = ()=> {
@@ -242,12 +272,16 @@ function MyHome(){
         <Container className={classes.mainContainer}>
             <Box style={homeBannerStyle}>
                 
-            <SearchBarDesign className={classes.SearchBar} />
+                <SearchBarDesign className={classes.SearchBar} />
                 <Box className={classes.find}>
                     <h2 className={classes.headerText} fontSize="30px">Not sure where to go? Perfect.</h2>
                     <Button  className={classes.imflexiblebtn} variant="contained" href="#" color="primary">I'm Flexible</Button>
                 </Box>  
             </Box>
+            
+            
+            
+
             
             
             <h2 className={classes.headerText1}>Discover Airbnb Experiences</h2>                
@@ -285,7 +319,6 @@ function MyHome(){
                <Button className={classes.AskButton} variant="contained" href="#" color="primary">
                   Ask a SuperHost
                </Button>
-
            </Box>
 
            <Box className={classes.tripsSuggestion}>
@@ -324,41 +357,68 @@ function MyHome(){
             </Box>
 
             <Box style={appStyle}>
-                <Button variant="contained" href="/search" color="primary" onMouseEnter={() => {
-                  setBgColor("red")
-             }}
-            onMouseLeave={() => {
-                setBgColor("yellow")
-            }}>
-                   red
+                 <h2 className={classes.textSlider}>{sliderHeader}</h2>
+                 <p className={classes.slidingText}>{sliderText}</p>
+
+                <Box className={classes.textSlider}>                 
+
+                
+
+                <Button variant="contained" href="" color="primary" 
+                    onMouseEnter={() => {
+                        setBgImage(`url(${PicEmir})`)
+                        setSliderHeader("Harer")                        
+                        setText("Lovely Community")
+                    }}
+                    onMouseLeave={() => {
+                        setBgImage(`url(${PicHarer})`)
+                        setSliderHeader("Gonder")                        
+                        setText("The City of Marvelious Spiritual Heritages")
+                    }}>
+                        Hareri
                </Button>
-               <Button variant="contained" href="/search" color="primary" onMouseEnter={() => {
-                  setBgColor("green")
-             }}
-            onMouseLeave={() => {
-                setBgColor("yellow")
-            }}>
-                   green
+               <Button style={btnStyle} variant="contained" href="" color="primary" onMouseEnter={() => {
+                        setBgImage(`url(${PicAfar})`)
+                        setSliderHeader("Afar")                        
+                        setText("Cradle of Human Kind")
+                    }}
+                    onMouseLeave={() => {
+                        setBgImage(`url(${PicHarer})`)
+                        setSliderHeader("Gonder")                        
+                        setText("The City of Marvelious Spiritual Heritages")
+                    }}>
+                    Afar
                </Button >
 
-        <Button variant="contained" href="/search" color="primary" 
+        <Button style={btnStyle} variant="contained" href="" color="primary" 
                onMouseEnter={() => {
-                setBgColor("pink")
-           }}
-          onMouseLeave={() => {
-              setBgColor("yellow")
-          }}>
-                   pink
+                        setBgImage(`url(${Pich})`)
+                        setSliderHeader("Hamer")                        
+                        setText("Hamer Peoples ")
+                    }}
+                    onMouseLeave={() => {
+                        setBgImage(`url(${PicHarer})`)
+                        setSliderHeader("Gonder")                        
+                        setText("The City of Marvelious Spiritual Heritages")
+                    }}>
+                   Hamer
                </Button>
 
-               <Button variant="contained" href="/search" color="primary" onMouseEnter={() => {
-                  setBgColor("blue")
-             }}
-            onMouseLeave={() => {
-                setBgColor("yellow")
-            }}>
-                   blue
+               <Button style={btnStyle} variant="contained" href="" color="primary" onMouseEnter={() => {
+                             setBgImage(`url(${PicHarer})`)
+                             setSliderHeader("Gonder")                        
+                             setText("The City of Marvelious Spiritual Heritages")
+                         }}
+                         onMouseLeave={() => {
+                             setBgImage(`url(${PicHarer})`)
+                             setSliderHeader("Gonder")                        
+                             setText("The City of Marvelious Spiritual Heritages")
+                         }}>
+                   Gonder
                </Button>
+
+               
+               </Box>
             </Box>
 
            <h2 className={classes.headerText1}></h2>
@@ -370,26 +430,24 @@ function MyHome(){
                <Button variant="contained" href="/search" color="primary">
                    Destination Art & Culture
                </Button>
-               <Button variant="contained" href="/search" color="primary">
+               <Button style={btnStyle} variant="contained" href="/search" color="primary">
                    Destination OutDoor Adventure
                </Button >
 
-               <Button variant="contained" href="/search" color="primary">
+               <Button style={btnStyle} variant="contained" href="/search" color="primary">
                    Mountain Cabins
                </Button>
 
-               <Button variant="contained" href="/search" color="primary">
+               <Button style={btnStyle} variant="contained" href="/search" color="primary">
                    Beach Destinations
                </Button>
-               <Button variant="contained" href="/search" color="primary" margin="5px">
+               <Button style={btnStyle} variant="contained" href="/search" color="primary" margin="5px">
                    Popular Destinations
                </Button>
                <hr color="blue" />
 
            </Box>
-           <Slider>
-               <p>kkkkkk</p>
-           </Slider>
+
            <AutoplaySlider
                 play={true}
                 cancelOnInteraction={false} // should stop playing on user interaction

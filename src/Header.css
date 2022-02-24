@@ -24,9 +24,9 @@
     display: flex;
     flex: 1;
     align-items: center;
-    max-width: 220px;
+    max-width: 250px;
     padding: 9px;
-    margin-left: 90px;
+    margin-left: 240px;
     height: 18px;
     border: 1px solid lightgray;
     border-radius: 999px;
@@ -57,6 +57,7 @@
     height: 25px;
     border-radius: 20px;
     margin-right: 25px;
+    width: 500px;
   }
 
   :root {
@@ -227,4 +228,8 @@
     height: 40px;
     border-radius: 5px;
     width: 80px;
+  }
+  .search {
+    margin-left: 35%;
+    margin-top: -90px;
   }

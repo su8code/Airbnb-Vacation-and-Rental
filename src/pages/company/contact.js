@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import background from "../../assets/background.jpg";
+import background from "../../assets/harer.jpg";
 import phoneIcon from "../../assets/phone.svg";
 import emailIcon from "../../assets/email.svg";
 import TextField from "@material-ui/core/TextField";
@@ -29,7 +29,7 @@ import HttpIcon from '@material-ui/icons/Http';
 const useStyle = makeStyles((theme) => ({
   secondGrid: {
     height: "60em",
-    padding: "5em",
+    padding: "4em",
     backgroundImage: `url(${background})`,
     backgroundPosition: "center",
     backgroundSize: "cover",

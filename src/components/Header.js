@@ -30,7 +30,7 @@ function Header() {
                             <Search setIsDatePickerOpen={setIsDatePickerOpen} />
                         </div>
                     )}
-                    <input type='text' placeholder='Start your search' />
+                    <input type='text' placeholder='Start your search here' />
                     <SearchIcon className='colorPrimary' />
                 </div>
                 <div className='headerDatePickerContainer'>
@@ -53,11 +53,13 @@ function Header() {
                     </Tooltip>
                 </div>
             </div>
-            {/* <div className='Headertop'> 
+            {
+            /* <div className='Headertop'> 
                     <Button className='b1'>Places to Stay</Button>
                     <Button className='b2'>Experiences</Button>
                     <Button className='b3'>Online Experiences</Button>
-        </div> */}
+        </div> */
+        }
             <div className='headerRight'>
                 <Link to='/becomehost'>
                     <Button className='btn btnPrimaryOutlined'>

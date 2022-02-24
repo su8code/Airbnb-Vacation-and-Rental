@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+
 function Card({cardHeaderContent, cardFooterContent, cardContent}) {
     const {img, caption} = cardContent
     return (
@@ -17,6 +18,7 @@ function Card({cardHeaderContent, cardFooterContent, cardContent}) {
                     />
                 </Link>
             </div>
+
             {cardFooterContent && (
                 <CardFooter cardFooterContent={cardFooterContent} />
             )}

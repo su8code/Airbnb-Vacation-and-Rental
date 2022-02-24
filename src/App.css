@@ -1,0 +1,19 @@
+.cursor{
+    width: 25px;
+    height: 25px;
+   background-color: yellow;
+   /* background-image: url("https://cutewallpaper.org/25/animated-gif-wont-work-as-wallpaper/a-small-collection-of-my-favorite-hd-gifs-album-on-imgur-moving-wallpapers-gif-background-rainbow-gif.gif"); */
+   background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif");
+    position:absolute; 
+    border-radius: 50%;
+    pointer-events:fill;
+   text-rendering:optimizeLegibility;
+   text-decoration-color: red;
+   text-transform: capitalize;
+   background-size: cover;
+   }
+   .app~.cursor{
+     transform: scale(0);
+     mix-blend-mode:difference;
+    }
+ 
