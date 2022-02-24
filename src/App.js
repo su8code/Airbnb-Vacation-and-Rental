@@ -5,10 +5,8 @@ import Footer from './components/Footer'
 import SearchPage from './SearchPage'
 
 import Login from './pages/Login/Login'
-import Dashboard from './pages/Dashboard/Dashboard'
 import New from './pages/New/New'
-import SearchBarDesign from './SearchBarDesign'
-import MyHome from './myhome'
+import MyHome from './Home'
 import AboutUS from './pages/company/aboutUs'
 import Services from './pages/company/Services2'
 import NotFound from './pages/NotFound'
@@ -30,7 +28,6 @@ function App() {
         <Header />        
         <Switch>
           <Route exact path="/" component ={MyHome} />
-          <Route path="/searchbar" component ={SearchBarDesign} />
           <Route path="/new" component ={New} />
           <Route path="/search" component ={SearchPage} />
           <Route path="/login" component ={Login} />

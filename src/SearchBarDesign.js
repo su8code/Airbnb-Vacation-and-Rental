@@ -3,8 +3,6 @@ import './MySearchBar.css'
 import SearchIcon from "@material-ui/icons/Search";
 import Search from './Search';
 
-import PowerModeInput from "power-mode-input";
-
 
 function SearchBarDesign(){
     const [showSearch, setShowSearch] = useState(false);
@@ -31,11 +29,11 @@ function SearchBarDesign(){
       </div>
       <div className="container-child">
           <label className="lable1">Check In</label>
-          <label className="lable2">Add Dates</label>
+          <label className="lable2" >Add Dates</label>
       </div>
       <div className="container-child" >
           <label className="lable1">Check Out</label>
-          <label className="lable2">Add Dates</label>
+          <label className="lable2" >Add Dates</label>
       </div>
       <div>
       </div>
@@ -52,8 +50,7 @@ function SearchBarDesign(){
         {showSearch && <Search />}
     </div>
    </div>
-     PowerModeInput.make(document.querySelector("#searchInputBox"));
-  
+    
    </>
    );
 }

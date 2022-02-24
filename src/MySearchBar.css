@@ -50,7 +50,8 @@
     color: white;
 }
 .search {
-    padding-top: 120px;
+    padding-top: 130px;
+    padding-left: 55px;
     border: 1 px solid black;
-
+    height: 480px;
 }

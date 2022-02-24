@@ -3,7 +3,7 @@ import './FooterStyle.css'
 import {SingleLinksColumn} from '../GetComponents'
 import {LanguageIcon, Facebook, Telegram, Instagram} from '../GetIcons'
 import {Link} from 'react-router-dom'
-import LinkedIn from '@material-ui/icons/LinkedIn'
+// import Button from '@material-ui/core/Button'
 
 const data = [
     {
@@ -110,7 +110,7 @@ function FooterBottom() {
                     href='https://www.facebook.com/profile.php?id=100075868836530'
                     target=' '
                 >
-                    Developed with <span className='heart'>❤️</span> by{' '}
+                    Developed with <span className='heart'>❤</span> by{' '}
                     <span className='developerName'>FEEE AASTU</span>
                 </a>
             </div>
@@ -139,12 +139,6 @@ function FooterBottom() {
                         target='_blank'
                     >
                         <Instagram />
-                    </a>
-                     <a
-                        href='FEEE AASTU'
-                        target='_blank'
-                    >
-                        <LinkedIn />
                     </a>
                 </div>
             </div>

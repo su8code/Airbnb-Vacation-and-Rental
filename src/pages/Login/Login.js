@@ -20,7 +20,7 @@ const Login = ({ history }) => {
     localStorage.setItem("user", _id);
     localStorage.setItem("name", name);
 
-    history.push("/");
+    history.push("/"); 
   }
 
   return (

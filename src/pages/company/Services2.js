@@ -17,7 +17,7 @@ import homeImage from "../../assets/background.jpg";
 
 const useStyleS =makeStyles(theme=>({
         container :{
-           backgroundImage: "linear-gradient( 109.6deg,  rgba(5,84,94,1) 16%, #bbb 91.1% )"
+          background: "linear-gradient(135deg, #00dbde 10%, #fc00ff 100%)" 
         },
           titles:{
             color:"white"
@@ -59,7 +59,7 @@ export const useStyle = makeStyles((theme) => ({
     },
     span: {
       fontFamily: "pacifico",
-      color: theme.palette.common.orange,
+      color: "white",
       fontSize: "1.2rem",
       fontWeight: 400,
     },
@@ -165,7 +165,7 @@ const Services = () => {
             
             >
               {" "}
-              <u>Our Services :</u>
+              <u>Our Services @ AirBnB</u>
             </Typography>
           </Grid>
         </Grid>
@@ -177,10 +177,10 @@ const Services = () => {
               {" "}
               Exclusive VIP Resting Room Rent
             </Typography>
-            <Typography variant="subtitle1" className={classeS.titles}>save Time.save Money</Typography>
+            <Typography variant="subtitle1" className={classeS.titles}>save Time.save your Money</Typography>
             <Typography variant="subtitle1" className={classeS.titles}>
               complete degital solutions from {matcheXS && <br />}degital
-              investigations <span className={classes.span}>celebration</span>
+              vacatio and trips holiday <span className={classes.span}>celebration</span>
             </Typography>
             <Button variant="outlined" className={classes.learnMore}>
               <span style={{ margin: 10 }} className={classes.span}>
@@ -209,7 +209,7 @@ const Services = () => {
           <Grid item>
             <Typography variant={matches ? "h5" : "h4"} className={classeS.titles}>
               {" "}
-               Beautifull Tent for Couples all over the world
+               Beautifull Tent for Couples vacation
             </Typography>
             <Typography variant="subtitle1"className={classeS.titles}>
               pay anywhere using your phone tablet or through your laptop.{matcheXS && <br />} extend Access.
@@ -217,7 +217,7 @@ const Services = () => {
             </Typography>
             <Typography variant="subtitle1"className={classeS.titles}>
               integrate your mobile experience {matcheXS && <br />}with either{" "}
-              <span className={classes.span}>mobile platforms</span>
+              <span className={classes.span}>  on a lovely vacation </span>
             </Typography>
             <Button variant="outlined" className={classes.learnMore}>
               <span style={{ margin: 10 }} className={classes.span}>
@@ -244,7 +244,7 @@ const Services = () => {
           <Grid item>
             <Typography variant={matches ? "h5" : "h4"} className={classeS.titles}>
               {" "}
-               Tour Guide and Car Renting with 24/7 Toll Free Customer Srvice
+                24/7 Toll Free Customer Service
             </Typography>
             <Typography variant="subtitle1" className={classeS.titles}>
               Reach More.{matcheXS && <br />} Dicover More.
