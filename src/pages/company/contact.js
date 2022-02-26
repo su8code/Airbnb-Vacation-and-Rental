@@ -314,7 +314,13 @@ const Contact = (props) => {
           <Grid item container direction="column" spacing={3}>
             <Grid item>
               <Typography variant="h3">Contact-Us</Typography>
-              <Typography variant="subtitle1"> lllll kkkkkkkkkkkkkkkkkkkkkkkkkk mmmmmmmmmmmmmmmmm nnnnnnnnnnnnn fffffffffffffffffffff ggggggggggggggggggg jjjjjjjjjj nnnnnnnnnnnnnnnnnnn bbbbbbbbbbbb vvvvvvvvvv ffffffffffff ddddddd ssssssssssss aaaaaaaaaa d ddddddddddd tttttttttt rrrrrrrr eeeeeeeeee yyyyyyyyyy iiiiiiiiiii oooooooooooooo</Typography>
+              <Typography variant="subtitle1"> 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+            sodales congue tristique. Cras non pretium sem. Duis interdum lorem
+            sit amet ligula pretium, sed rutrum urna semper. Pellentesque
+            habitant morbi tristique senectus et netus et malesuada fames ac
+            turpis egestas. Phasellus egestas gravida ullamcorper.
+              </Typography>
             </Grid>
             <Grid item container direction="column">
               <Grid item container spacing={2}>

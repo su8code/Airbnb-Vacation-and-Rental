@@ -29,6 +29,8 @@ import PicHarer from "./assets/harer.jpg"
 import Pich from "./assets/hh.jpg"
 import PicEmir from "./assets/emir.jpg"
 
+import PicLalibela from "./assets/aventura.jpg"
+
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const useStyles = makeStyles((theme)=> ({
@@ -261,8 +263,16 @@ function MyHome(){
     };
 
     const btnStyle = {
-        marginLeft: "10px"
-    };
+        marginLeft: "10px",
+        fontSize: "20px",
+        border: "3px solid lightblue",
+        color:"white",
+        borderRadius:"25px",
+        fontWeight:"bold",
+        backgroundColor:"teal",
+
+
+        };
 
     const changeBackground = ()=> {
         console.log(window.scrollY)        
@@ -276,7 +286,7 @@ function MyHome(){
                 <SearchBarDesign className={classes.SearchBar} />
                 <Box className={classes.find}>
                     <h2 className={classes.headerText} fontSize="30px">Not sure where to go? Perfect.</h2>
-                    <Button  className={classes.imflexiblebtn} variant="contained" href="#" color="primary">I'm Flexible</Button>
+                    <Button  className={classes.imflexiblebtn} variant="contained" href="#" >I'm Flexible</Button>
                 </Box>  
             </Box>
             
@@ -290,14 +300,14 @@ function MyHome(){
            <Box className={classes.tripsExperience}>
                     <Box className={classes.Experience1}>
                                     <h1 className={classes.expHeadingText}>Things to do <br /> on your trip</h1>
-                                    <Button className={classes.ExpButton} variant="contained" href="#" color="primary">
+                                    <Button className={classes.ExpButton} variant="contained" href="#" >
                                         Experiences
                                     </Button>  
                     </Box>
                     
                     <Box className={classes.Experience2}>
                                     <h1 className={classes.expHeadingText}>Things to do <br /> from home</h1> 
-                                    <Button className={classes.ExpButton} variant="contained" href="#" color="primary">
+                                    <Button className={classes.ExpButton} variant="contained" href="#" >
                                         Online Experiences
                                     </Button>  
                     </Box>
@@ -306,7 +316,7 @@ function MyHome(){
            <Box className={classes.airbnbShopGifts}>
                 <Box className={classes.airbnbShopGiftsLeft}>
                     <h1> Shop Airbnb <br /> gift cards</h1>
-                    <Button className={classes.GiftButton} variant="contained" href="#" color="primary">
+                    <Button className={classes.GiftButton} variant="contained" href="#">
                         Learn More
                     </Button>
                 </Box>
@@ -328,28 +338,29 @@ function MyHome(){
 
                    <Grid item xs={12} sm={6} md={3} >
                        <Card
-                            src={BgPicture}
-                            title="Addis Abeba "
-                            description="9 Killo Meters away from you! ."
+                            src={Pich}
+                            title="Hamer "
+                            description="349 Killo Meters away from you! ."
                         />
                     </Grid>
                     <Grid item xs={12} sm={6} md={3} >
                         <Card
-                            src={BgPicture}
-                            title="Lalibela"
+                            src={PicEmir}
+                            title="Emirs of Harer"
                             description="234Killo Meters away from You!."
                         />
                     </Grid>
                     <Grid item xs={12} sm={6} md={3} >
                         <Card
-                            src={BgPicture}
-                            title="Gonder"
+                            src={PicLalibela}
+                        
+                            title="Lalibela"
                             description="400Killo Meters away from you!."
                         />
                     </Grid>
                     <Grid item xs={12} sm={6} md={3} >
                         <Card
-                            src={BgPicture}
+                            src={Pic1}
                             title="Axum"
                             description="600 Killo Meters away from you!."
                         />
@@ -365,7 +376,7 @@ function MyHome(){
 
                 
 
-                <Button variant="contained" href="" color="primary" 
+                <Button style={btnStyle} variant="contained" href="" color="primary" 
                     onMouseEnter={() => {
                         setBgImage(`url(${PicEmir})`)
                         setSliderHeader("Harer")                        
@@ -378,7 +389,7 @@ function MyHome(){
                     }}>
                         Hareri
                </Button>
-               <Button style={btnStyle} variant="contained" href="" color="primary" onMouseEnter={() => {
+               <Button style={btnStyle} variant="outlined" href="" color="primary" onMouseEnter={() => {
                         setBgImage(`url(${PicAfar})`)
                         setSliderHeader("Afar")                        
                         setText("Cradle of Human Kind")
@@ -428,12 +439,10 @@ function MyHome(){
 
            <Box className="DestinationSwitchingButtons">
 
-               <Button variant="contained" href="/search" color="primary">
+               <Button style={btnStyle} variant="contained" href="/search" color="primary">
                    Destination Art & Culture
                </Button>
-               <Button style={btnStyle} variant="contained" href="/search" color="primary">
-                   Destination OutDoor Adventure
-               </Button >
+               
 
                <Button style={btnStyle} variant="contained" href="/search" color="primary">
                    Mountain Cabins

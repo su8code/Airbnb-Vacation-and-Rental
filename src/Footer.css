@@ -24,14 +24,12 @@
 }
 .footer a {
     color: var(--clr-black-light);
-    /* display: flex;
-    justify-content: space-between; */
+    
 }
 .footer a:hover {
     text-decoration: underline;
 }
 
-/* Footer Bottom */
 .footerBottom {
     border-top: 1px solid #dddddd;
     padding: 2.6rem 0;
@@ -40,9 +38,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 2rem; */
+    
 }
 .footerBottomLeft,
 .footerBottomRight {
@@ -82,7 +78,6 @@
 }
 .developerName,
 .heart {
-    /* font-weight: 600; */
     color: var(--clr-primary);
 }
 

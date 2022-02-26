@@ -32,7 +32,6 @@ const New = ({ history }) => {
       headers: { user_id }
     });
 
-    history.push("/dashboard");
   }
 
   return (

@@ -16,7 +16,7 @@ import DateRangeIcon from '@material-ui/icons/DateRange'
 import Search from './Search'
 function Header() {
   const history = useHistory();
-  const [showSearch, setShowSearch] = useState(false);
+  const [showSearch, setShowSearch] = useState(true);
   const [navbar , setNavbar] = useState("true");  
   const [slidingBarValue , setSliderValue] = useState(15);
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false)
@@ -44,8 +44,15 @@ function Header() {
            
             <div className='header__center'>
                 <input onClick={() => setShowSearch(!showSearch)} type="text" classNamr="searchtxt" placeholder='Start Your Search'/>
-                <SearchIcon onClick={() => history.push('/search')} className="searchIcon"/>
+                
+                { showSearch && (
+                    <SearchIcon onClick={() => history.push('/search')} className="searchIcon"/>
 
+                )
+
+                }
+
+                
 
                 <div className='headerInputContainer'>
                     {isDatePickerOpen && (
@@ -86,7 +93,7 @@ function Header() {
 
                 </Link>
                        <Link to='/aboutus'>
-                    <Button className='btn btnPrimaryOutlined'>
+                    <Button className='btn btnPrimaryOutlined' color="orange">
                        About us
                     </Button>
                   

@@ -162,8 +162,7 @@ const Services = () => {
             <Typography
               variant={matches ? "h5" : "h4"}
               style={{fontFamily:"pacifico",color:theme.palette.secondary.main}}
-            
-            >
+             >
               {" "}
               <u>Our Services @ AirBnB</u>
             </Typography>

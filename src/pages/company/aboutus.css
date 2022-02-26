@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url('https://th.bing.com/th/id/R.552b01e608c2048ff740590a4e5cc8de?rik=9AG1amtnLJjUsQ&pid=ImgRaw&r=0');
+    background-image: url('../../assets/photo/bg3.jpg');
     background-size: cover;
     background-position: center center;
     color: #fff;
@@ -69,28 +69,28 @@
   .card-img1{
     width: 100%;
     height: 12rem;
-    background-image: url('https://th.bing.com/th/id/R.552b01e608c2048ff740590a4e5cc8de?rik=9AG1amtnLJjUsQ&pid=ImgRaw&r=0');
+    background-image: url('../../assets/photo/01.jpg');
     background-size: cover;
     background-position: center center;
   }
   .card-img2{
     width: 100%;
     height: 12rem;
-    background-image: url('https://th.bing.com/th/id/R.552b01e608c2048ff740590a4e5cc8de?rik=9AG1amtnLJjUsQ&pid=ImgRaw&r=0');
+    background-image: url('../../assets/photo/02.jpg');
     background-size: cover;
     background-position: center center;
   }
   .card-img3{
     width: 100%;
     height: 12rem;
-    background-image: url('https://th.bing.com/th/id/R.552b01e608c2048ff740590a4e5cc8de?rik=9AG1amtnLJjUsQ&pid=ImgRaw&r=0');
+    background-image: url('../../assets/photo/03.jpg');
     background-size: cover;
     background-position: center center;
   }
   .card-img4{
     width: 100%;
     height: 12rem;
-    background-image: url('https://th.bing.com/th/id/R.552b01e608c2048ff740590a4e5cc8de?rik=9AG1amtnLJjUsQ&pid=ImgRaw&r=0');
+    background-image: url('../../assets/photo/04.jpeg');
     background-size: cover;
     background-position: center center;
   }
@@ -98,3 +98,4 @@
     font-family: 'Dancing Script',cursive;
     font-size: 24px;
   }
+ 

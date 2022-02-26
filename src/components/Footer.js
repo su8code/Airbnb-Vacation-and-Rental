@@ -52,6 +52,11 @@ const data = [
                 name: 'Host an Online Experience',
                 url: '/',
             },
+            {
+                id: 3 ,
+                name: "Log in",
+                url: '/login',
+            }
         ],
     },
     {
@@ -74,7 +79,7 @@ const data = [
 
 function Footer() {
     return (
-        <section className='footer MT5'>
+        <section className='footer MT4'>
             <div className='footerContainer'>
                 {data.map(item => {
                     return <SingleLinksColumn key={item.id} {...item} />

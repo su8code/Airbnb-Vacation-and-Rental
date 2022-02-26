@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) =>({
          color: "white",
          paddingTop: "20px",
          justifyContent: "center"
+     },
+     fbbutton: {
+         marginTop: "10px"
      }
     }));
 
@@ -50,16 +53,16 @@ function AboutUs() {
                    variant="contained"
                    marginTop="200px"
                    >
-                       Send Us Message
+                       Send Message
                    </Button>
 
-                     <Fab color="primary" aria-label="add">
-                   <AddIcon onClick={()=> setShowMore(!showMore) }/>
-                </Fab>
+                     <Fab className={classes.fbbutton} color="primary" aria-label="add">
+                        <AddIcon onClick={()=> setShowMore(!showMore) }/>
+                     </Fab>
              </Box>
 
              <Box className={classes.aboutUsTeamDetails}>
-
+ 
                  {showMore && (
                 <>
                           <div class="about-us">
@@ -113,16 +116,12 @@ function AboutUs() {
                                   </div>
 
 
-                              <div class="social-media">
-                                  <i class="fa fa-github" style={{ fontSize: "24px" }}></i>
-                                  <i class="fa fa-linkedin" style={{ fontSize: "24px" }}></i>
-                                  <i class="fa fa-twitter" style={{ fontSize: "24px" }}></i>
-                                  <i class="fa fa-facebook" style={{ fontSize: "24px" }}></i>
-                              </div>
+                              
                           </div>
                       </div></>
           
-                 )}
+                 )
+                }
              </Box>
      </Container> 
       
